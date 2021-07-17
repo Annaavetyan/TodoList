@@ -1,38 +1,81 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+ input[type = "text"] {
+  width: 70%;
+  margin-right: 5%;
+  height: 40px;
+  border-radius: 5px;
+  padding:0 10px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ input[type = "text"]:focus-visible,
+ input[type = "text"]:focus,
+ input[type = "text"]{
+  border: 1px solid coral;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+ label {
+   display: block;
+   font-size: 13px;
+   margin-bottom: 10px;
+ }
+.btn {
+  width: 25%;
+  height: 40px;
+  line-height: 38px;
+  border-radius: 5px;
+  border: 1px solid coral;
+  background-color: coral;
+  color: #fff;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+ .container,
+form,
+.todoList {
+  max-width: 500px;
+  margin: auto;
+}
+ .container,
+ form {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.todoList .todoItem {
+  height: 40px;
+  background-color: darkcyan;
+  color: #ffffff;
+  position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin-bottom: 10px;
 }
+.todoList .todoTitle {
+  font-size: 14px;
+}
+.editList {
+  display: flex;
+  list-style: none;
 
-.App-link {
-  color: #61dafb;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.editList .editItem {
+  margin-right: 10px;
 }
+.flexAlignBox {
+  display: flex;
+  align-items: center;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}
+ .mb-30 {
+   margin-bottom: 30px;
+ }
+.d-inline-block {
+  display: inline-block;
+}
+.react-datepicker-wrapper {
+  width: 100%;
+}
+ .error{
+   color: red;
+ }

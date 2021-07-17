@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import React from 'react'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import TodoForm from "./components/TodoForm/TodoForm";
+import TodoList from "./components/TodoList/TodoList";
+import {connect} from "react-redux";
+import {changeInputBox, createNewPost} from "./components/redux/TodoReducer";
+
+
+
+
+class AppContainer extends React.Component {
+
+    render() {
+       return (
+           <div className="App">
+               <TodoForm {...this.props}/>
+               <TodoList {...this.props}/>
+           </div>
+       )
+    }
+}
+let mapStateToProps = (state)=> {
+    return {
+        posts: state.todoPage.posts,
+        name:state.todoPage.name,
+        endDate:state.todoPage.endDate,
+        inputBox:state.todoPage.inputBox,
+    }
 }
 
-export default App;
+
+export default connect(mapStateToProps,{createNewPost,changeInputBox})(AppContainer);
